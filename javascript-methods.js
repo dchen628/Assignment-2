@@ -50,6 +50,14 @@ Array.prototype.mySome = function(callbackFn) {
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
   // Place your code here.
+  for(let i = 0; i < this.length; i++)
+    {
+        if(!callbackFn(this[i], i, this))
+        {
+            return false;
+        }
+    }
+    return true;
 };
 
 // REDUCE //
