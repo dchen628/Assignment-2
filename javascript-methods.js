@@ -147,8 +147,38 @@ Array.prototype.myIndexOf = function(searchElement, fromIndex) {
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function(searchElement) {
+Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
   // Place your code here.
+  let index = -1;
+    let i;
+    if(fromIndex < 0)
+    {
+        i = this.length + fromIndex;
+    }
+    else if(fromIndex < this.length)
+    {
+        i = fromIndex;
+    }
+    else if(fromIndex < -this.length)
+    {
+        return index;
+    }
+    else if(fromIndex === undefined)
+    {
+        i = 0;
+    }
+    else
+    {
+        i = this.length - 1;
+    }
+    for(i; i < this.length; i++)
+    {
+        if(this[i] === searchElement)
+        {
+            index = i;
+        }
+    }
+    return index;
 };
 
 // KEYS //
