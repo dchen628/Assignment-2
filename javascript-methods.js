@@ -90,9 +90,13 @@ Array.prototype.myReduce = function(callbackFn, initialValue) {
 Array.prototype.myIncludes = function(searchElement, fromIndex) {
   // Place your code here.
   let i;
-    if(fromIndex === undefined)
+    if(fromIndex === undefined || fromIndex < -this.length)
     {
         i = 0;
+    }
+    else if(fromIndex < 0)
+    {
+        i = fromIndex + this.length
     }
     else
     {
@@ -115,6 +119,31 @@ Array.prototype.myIncludes = function(searchElement, fromIndex) {
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement) {
   // Place your code here.
+  let i;
+    if(fromIndex === undefined || fromIndex < -this.length)
+    {
+        i = 0;
+    }
+    else if(fromIndex < 0)
+    {
+        i = fromIndex + this.length
+    }
+    else
+    {
+        if(fromIndex >= this.length)
+        {
+            return false;
+        }
+        i = fromIndex;
+    }
+    for(i ; i < this.length; i++)
+    {
+        if(this[i] == searchElement)
+        {
+            return i;
+        }
+    }
+    return -1;
 };
 
 // LASTINDEXOF //
