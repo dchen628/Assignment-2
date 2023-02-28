@@ -61,7 +61,7 @@ Array.prototype.myEvery = function(callbackFn) {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function(callbackFn) {
+Array.prototype.myReduce = function(callbackFn, initialValue) {
   // Place your code here.
   let accumulator;
     if(initialValue === undefined)
@@ -87,7 +87,7 @@ Array.prototype.myReduce = function(callbackFn) {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function(searchElement) {
+Array.prototype.myIncludes = function(searchElement, fromIndex) {
   // Place your code here.
   let i;
     if(fromIndex === undefined)
