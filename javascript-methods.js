@@ -195,4 +195,10 @@ Object.myKeys = function(object) {
 // VALUES //
 Object.myValues = function(object) {
   // Place your code here.
+  let arr = [];
+    for( key in object )
+    {
+        arr.push(object[key])
+    }
+    return arr;
 };
