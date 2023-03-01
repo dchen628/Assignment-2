@@ -20,8 +20,8 @@ console.log(array1.myEvery(isBelowThreshold));
 function isBigEnough(element, index, array) {
     return element >= 10;
   }
-  console.log([12, 5, 8, 130, 44].every(isBigEnough));
-  console.log([12, 54, 18, 130, 44].every(isBigEnough));
+  console.log([12, 5, 8, 130, 44].myEvery(isBigEnough));
+  console.log([12, 54, 18, 130, 44].myEvery(isBigEnough));
 
   const arrayLike = {
     length: 3,

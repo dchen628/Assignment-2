@@ -184,10 +184,13 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
 // KEYS //
 Object.myKeys = function(object) {
   // Place your code here.
-  let arr = [];
-    for(let i = 0; i < this.length; i++)
+  if(typeof object !== 'object' || object === null)
+        throw new TypeError('TypeError')
+    let arr = [];
+    let i = 0;
+    for( key in object )
     {
-        arr.push(object(this[i]));
+        arr.push(key)
     }
     return arr;
 };
