@@ -6,27 +6,21 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
     {
         i = this.length + fromIndex;
     }
-    else if(fromIndex < this.length)
-    {
-        i = fromIndex;
-    }
-    else if(fromIndex < -this.length)
+    else if(fromIndex < -(this.length))
     {
         return index;
     }
-    else if(fromIndex === undefined)
-    {
-        i = 0;
-    }
-    else
+    else if(fromIndex >= this.length || fromIndex === undefined)
     {
         i = this.length - 1;
     }
-    for(i; i < this.length; i++)
+    else
+        i = fromIndex;
+    for(i; i >= 0 ; i--)
     {
         if(this[i] === searchElement)
         {
-            index = i;
+            return i;
         }
     }
     return index;
@@ -42,9 +36,9 @@ console.log(animals.myLastIndexOf('Tiger'));
 
 console.log(" ");
 const numbers = [2, 5, 9, 2];
-console.log(numbers.lastIndexOf(2)); // 3
-console.log(numbers.lastIndexOf(7)); // -1
-console.log(numbers.lastIndexOf(2, 3)); // 3
-console.log(numbers.lastIndexOf(2, 2)); // 0
-console.log(numbers.lastIndexOf(2, -2)); // 0
-console.log(numbers.lastIndexOf(2, -1)); // 3
+console.log(numbers.myLastIndexOf(2)); // 3
+console.log(numbers.myLastIndexOf(7)); // -1
+console.log(numbers.myLastIndexOf(2, 3)); // 3
+console.log(numbers.myLastIndexOf(2, 2)); // 0
+console.log(numbers.myLastIndexOf(2, -2)); // 0
+console.log(numbers.myLastIndexOf(2, -1)); // 3
