@@ -1,9 +1,12 @@
 Object.myKeys = function(object) {
     // Place your code here.
+    if(typeof object !== 'object' || object === null)
+        throw new TypeError('TypeError')
     let arr = [];
-    for(let i = 0; i < this.length; i++)
+    let i = 0;
+    for( key in object )
     {
-        arr.push(object(this[i]));
+        arr.push(key)
     }
     return arr;
   };
@@ -14,11 +17,11 @@ Object.myKeys = function(object) {
     c: false
   };
   
-  console.log(Object.keys(object1));
+  console.log(Object.myKeys(object1));
   // Expected output: Array ["a", "b", "c"]
 
   const obj = { 0: "a", 1: "b", 2: "c" };
-console.log(Object.keys(obj)); // ['0', '1', '2']
+console.log(Object.myKeys(obj)); // ['0', '1', '2']
 
 const myObj = Object.create(
     {},
@@ -31,5 +34,5 @@ const myObj = Object.create(
     },
   );
   myObj.foo = 1;
-  console.log(Object.keys(myObj)); // ['foo']
+  console.log(Object.myKeys(myObj)); // ['foo']
 
